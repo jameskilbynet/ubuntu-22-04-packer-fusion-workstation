@@ -20,7 +20,7 @@ cp ubuntu-2204-daily.pkr.hcl ubuntu-2204-daily.pkr.hcl.bak
 cp http/user-data http/user-data.bak
 
 # Let's make sure the ISO we're trying to use has the correct/current checksum:
-DAILY_ISO_CHECKSUM=`curl https://cdimage.ubuntu.com/ubuntu-server/daily-live/current/SHA256SUMS | grep live-server-amd64.iso | awk '{print $1}'`
+DAILY_ISO_CHECKSUM=`curl https://cdimage.ubuntu.com/ubuntu-server/jammy/daily-live/current/SHA256SUMS | grep live-server-amd64.iso | awk '{print $1}'`
 # Now do some search and replace to customize (I know this can be done with variables.pkrvars.hcl, but keeping things extra simple for now)
 if [ `uname -s` == "Darwin" ]; then
   sed -i "" "s/iso_checksum = .*/iso_checksum = \"sha256:$DAILY_ISO_CHECKSUM\"/" "ubuntu-2204-daily.pkr.hcl"

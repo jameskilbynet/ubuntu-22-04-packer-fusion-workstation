@@ -2,8 +2,8 @@ source "vmware-iso" "jammy-daily" {
   // Docs: https://www.packer.io/plugins/builders/vmware/iso
 
   // VM Info:
-  vm_name       = "jammy-2022-04-17"
-  guest_os_type = "ubuntu64Guest"
+  vm_name       = "jammy-2024-01-03"
+  guest_os_type = "ubuntu-64"
   version       = "16"
   headless      = false
   // Virtual Hardware Specs
@@ -16,11 +16,11 @@ source "vmware-iso" "jammy-daily" {
   
   // ISO Details
   iso_urls =[
-          "file:/Users/bazbill/Downloads/jammy-live-server-amd64.iso",
-          "https://cdimage.ubuntu.com/ubuntu-server/daily-live/current/jammy-live-server-amd64.iso"]
-  iso_checksum = "sha256:c02a89385c11ae5856b5c0b68b37aa838ae848659e89a302a687251ea004ee4f"
-  iso_target_path   = "/Users/bazbill/Downloads"
-  output_directory  = "/Users/bazbill/Downloads/Ubuntu-22.04-Build"
+          "file:/Users/jkilby/Downloads/jammy-live-server-amd64.iso",
+          "https://cdimage.ubuntu.com/ubuntu-server/jammy/daily-live/current/jammy-live-server-amd64.iso"]
+  iso_checksum = "sha256:0af79e78cfdf3caf61d32adcf738de0a63c53a30abdc76c8d90bb36d9c22cb05"
+  iso_target_path   = "/Users/jkilby/Downloads"
+  output_directory  = "/Users/jkilby/Downloads/Ubuntu-22.04-Build"
   snapshot_name     = "clean"  
   http_directory    = "http"
   ssh_username      = "vmadmin"
